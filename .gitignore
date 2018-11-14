@@ -1,0 +1,7 @@
+venv/
+venv
+__pycache__/
+color/__pycache__
+.idea
+*.pyc
+

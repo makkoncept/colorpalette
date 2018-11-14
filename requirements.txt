@@ -1,0 +1,10 @@
+Click==7.0
+Flask==1.0.2
+Flask-WTF==0.14.2
+itsdangerous==1.1.0
+Jinja2==2.10
+MarkupSafe==1.0
+Pillow==5.3.0
+webcolors==1.8.1
+Werkzeug==0.14.1
+WTForms==2.2.1
