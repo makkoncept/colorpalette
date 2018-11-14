@@ -48,5 +48,5 @@ def img_tag_size(height, width):
 
 
 @app.errorhandler(413)
-def error413():
+def error413(e):
     return render_template('413.html'), 413
