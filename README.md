@@ -32,4 +32,4 @@ To know more about the method you can read [this](http://www.aishack.in/tutorial
 View on `localhost:5000`
 
 ## credits 
-[Stackoverflow]() and [script]()
+[Stackoverflow](https://stackoverflow.com/questions/1065945/how-to-reduce-color-palette-with-pil/1074680#1074680) and [script](https://gist.github.com/zollinger/1722663)
