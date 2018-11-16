@@ -19,17 +19,33 @@ The `color.py` script does all the work. It uses Pillow. It takes the image and 
 
 To know more about the method you can read [this](http://www.aishack.in/tutorials/dominant-color/) post 
 
-## Run Locally
+## Install & run locally
 
-- `git clone https://github.com/makkoncept/colorpalette.git`
-- `cd colorpalette`
-- `python3 -m venv venv`
-- `source venv/bin/activate`  for linux
-- `venv\Scripts\activate.bat` for windows
-- `pip install -r requirements.txt`
-- `python run.py`
+Install:
+```
+git clone https://github.com/makkoncept/colorpalette.git  
+cd colorpalette
+```  
+Create a virtualenv and activate it on Linux:  
+```
+python3 -m venv venv   
+. venv/bin/activate  
+```  
+Or on Windows cmd:  
+```
+py -3 -m venv venv
+venv\Scripts\activate.bat  
+```  
+Install requirements:
+```
+pip install -r requirements.txt  
+```  
+Run:
+```
+python run.py
+```
 
-View on `localhost:5000`
+View on [localhost:5000](http://127.0.0.1:5000)
 
 ## credits 
 [Stackoverflow](https://stackoverflow.com/questions/1065945/how-to-reduce-color-palette-with-pil/1074680#1074680) and [script](https://gist.github.com/zollinger/1722663)
