@@ -1,4 +1,4 @@
-**[Live demo](https://colorpalettedemo.herokuapp.com/)**
+# **[Live demo](https://colorpalettedemo.herokuapp.com/)**
 
 ## What it do
 Extracts 10 dominating colors from the image and add the palette to the bottom of the image (inspired by [colorpalette.cinema](https://www.instagram.com/colorpalette.cinema/?hl=en)).
