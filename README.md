@@ -26,14 +26,16 @@ Install:
 git clone https://github.com/makkoncept/colorpalette.git  
 cd colorpalette
 ```  
-Create a virtualenv and activate it on Linux:  
+Create a virtualenv:  
 ```
 python3 -m venv venv   
+```  
+Activate it on Linux:
+```
 . venv/bin/activate  
 ```  
 Or on Windows cmd:  
 ```
-py -3 -m venv venv
 venv\Scripts\activate.bat  
 ```  
 Install requirements:
