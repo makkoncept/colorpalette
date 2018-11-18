@@ -1,7 +1,7 @@
 from color import app
 from color.color import get_colors
 from color.forms import PhotoForm
-from flask import render_template, redirect, url_for, request
+from flask import render_template, redirect, url_for, request, session
 from werkzeug.utils import secure_filename
 from webcolors import hex_to_rgb
 import os
@@ -18,12 +18,14 @@ def index():
         _, ext = os.path.splitext(filename)
         filename = uuid.uuid4().hex + ext
         print(filename)
-        f = get_colors(f, palette_length_div=form.palette_height.data, outline_width=form.palette_outline_width.data,
+        f, pal2, hex_codes = get_colors(f, palette_length_div=form.palette_height.data, outline_width=form.palette_outline_width.data,
                        outline_color=hex_to_rgb(request.form.get('palette_outline_color')))
         path = os.path.join(app.root_path, 'static/images',  filename)
+        path2 = os.path.join(app.root_path, 'static/images', "pal"+filename)
+        session['hex_codes'] = hex_codes
         f.save(path)
-        # print(path)
-        # print(f.width)
+        pal2.save(path2)
+
         return redirect(url_for('picture', name=filename, height=f.height, width=f.width))
 
     return render_template('index.html', form=form, src='default')
@@ -32,9 +34,9 @@ def index():
 @app.route('/picture/<name>/<height>/<width>')
 def picture(name, height, width):
     src = url_for('static', filename='images/' + name)
+    src2 = url_for('static', filename='images/' + "pal" + name)
     height, width = img_tag_size(int(height), int(width))
-    print(height, width)
-    return render_template('picture.html', src=src, height=height, width=width)
+    return render_template('picture.html', src=src, src2=src2, height=height, width=width, hex_codes=session.get('hex_codes'))
 
 
 def img_tag_size(height, width):

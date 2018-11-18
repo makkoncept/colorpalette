@@ -35,11 +35,28 @@
       <p style="text-align: center;">Right click on it, and select "save image as" to download it. The downloaded image will be of Original Size</p>
         <p style="text-align: center;">Try <a href="{{url_for('index')}}">Again</a>?</p>
     </div>
-    <div class="row">
       <div>
         <img src="{{src}}" height="{{height}}" width="{{width}}" style="margin-left: auto; margin-right: auto; display: block">
     </div>
-  </div>
+      <h3 style="text-align: center; padding-top: 40px"> Palette with hex codes</h3>
 
+        <div style="padding-top: 70px">
+            <table>
+
+              <tr>
+                {% for hex in hex_codes %}
+                <th style=" padding: 5px 20px 20px 20px; border: none;">
+                  {{ hex }}
+                </th>
+                {% endfor %}
+              </tr>
+            <tr>
+                <img src="{{src2}}" style="margin-left: auto; margin-right: auto; display: block">
+            </tr>
+        </table>
+
+        </div>
+
+  </div>
 </body>
 </html>
