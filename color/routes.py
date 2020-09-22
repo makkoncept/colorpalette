@@ -1,5 +1,5 @@
 from color import app
-from color.color import get_colors
+from color.color import process_uploaded_image
 from color.forms import PhotoForm
 from flask import render_template, redirect, url_for, request, session
 from werkzeug.utils import secure_filename
@@ -8,35 +8,63 @@ import os
 import uuid
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route("/", methods=["GET", "POST"])
 def index():
     form = PhotoForm()
     if form.validate_on_submit():
-        print(hex_to_rgb(request.form.get('palette_outline_color')))
-        f = form.photo.data
-        filename = secure_filename(f.filename)
+        image = form.photo.data
+
+        filename = secure_filename(image.filename)  # sanitize image name
         _, ext = os.path.splitext(filename)
-        filename = uuid.uuid4().hex + ext
-        print(filename)
-        f, pal2, hex_codes = get_colors(f, palette_length_div=form.palette_height.data, outline_width=form.palette_outline_width.data,
-                       outline_color=hex_to_rgb(request.form.get('palette_outline_color')))
-        path = os.path.join(app.root_path, 'static/images',  filename)
-        path2 = os.path.join(app.root_path, 'static/images', "pal"+filename)
-        session['hex_codes'] = hex_codes
-        f.save(path)
-        pal2.save(path2)
+        new_filename = uuid.uuid4().hex + ext  # creating a random name
 
-        return redirect(url_for('picture', name=filename, height=f.height, width=f.width))
+        image_with_palette, pallete, hex_codes = process_uploaded_image(
+            image,
+            pallete_division_factor=form.palette_height.data,
+            outline_width=form.palette_outline_width.data,
+            outline_color=hex_to_rgb(request.form.get("palette_outline_color")),
+        )
 
-    return render_template('index.html', form=form, src='default')
+        image_with_pallete_path = os.path.join(
+            app.root_path, "static/images", new_filename
+        )
+        pallete_path = os.path.join(
+            app.root_path, "static/images", "pal" + new_filename
+        )
+
+        session["hex_codes"] = hex_codes
+
+        # saving image and pallete
+        image_with_palette.save(image_with_pallete_path)
+        pallete.save(pallete_path)
+
+        return redirect(
+            url_for(
+                "picture",
+                name=new_filename,
+                height=image_with_palette.height,
+                width=image_with_palette.width,
+            )
+        )
+
+    return render_template("index.html", form=form, src="default")
 
 
-@app.route('/picture/<name>/<height>/<width>')
+@app.route("/picture/<name>/<height>/<width>")
 def picture(name, height, width):
-    src = url_for('static', filename='images/' + name)
-    src2 = url_for('static', filename='images/' + "pal" + name)
+    processed_img_relative_path = url_for("static", filename="images/" + name)
+    pallete_relative_path = url_for("static", filename="images/" + "pal" + name)
+
     height, width = img_tag_size(int(height), int(width))
-    return render_template('picture.html', src=src, src2=src2, height=height, width=width, hex_codes=session.get('hex_codes'))
+
+    return render_template(
+        "picture.html",
+        src=processed_img_relative_path,
+        src2=pallete_relative_path,
+        height=height,
+        width=width,
+        hex_codes=session.get("hex_codes"),
+    )
 
 
 def img_tag_size(height, width):
@@ -44,11 +72,11 @@ def img_tag_size(height, width):
         return height, width
     else:
         while height > 850 and width > 850:
-            height = int(height/2)
-            width = int(width/2)
+            height = int(height / 2)
+            width = int(width / 2)
         return height, width
 
 
 @app.errorhandler(413)
 def error413(e):
-    return render_template('413.html'), 413
+    return render_template("413.html"), 413
