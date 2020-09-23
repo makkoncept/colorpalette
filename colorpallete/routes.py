@@ -1,6 +1,6 @@
-from color import app
-from color.color import process_uploaded_image
-from color.forms import PhotoForm
+from colorpallete import app
+from colorpallete.color import process_uploaded_image
+from colorpallete.forms import PhotoForm
 from flask import render_template, redirect, url_for, request, session
 from werkzeug.utils import secure_filename
 from webcolors import hex_to_rgb
