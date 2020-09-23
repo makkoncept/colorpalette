@@ -7,5 +7,5 @@ Jinja2==2.10.1
 MarkupSafe==1.0
 Pillow==7.2.0
 webcolors==1.8.1
-Werkzeug==0.15.3
+Werkzeug==0.15.5
 WTForms==2.2.1
