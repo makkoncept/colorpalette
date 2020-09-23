@@ -1,7 +1,7 @@
 venv/
 venv
 __pycache__/
-colorpallete/__pycache__
+colorpalette/__pycache__
 .idea
 *.pyc
 .vscode/

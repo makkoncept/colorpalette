@@ -1,1 +1,1 @@
-web: gunicorn colorpallete:app
+web: gunicorn colorpalette:app
