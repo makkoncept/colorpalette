@@ -9,3 +9,4 @@ Pillow==7.2.0
 webcolors==1.8.1
 Werkzeug==0.15.5
 WTForms==2.2.1
+python-dotenv==0.14.0
