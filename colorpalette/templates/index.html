@@ -1,81 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
+    <meta charset="utf-8" />
+    <title>Color-Palette</title>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
-  <meta charset="utf-8">
-  <title>Color-Palette</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- FONT
+    <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css" />
 
-  <!-- CSS
+    <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="/static/css/normalize.css">
-  <link rel="stylesheet" href="/static/css/skeleton.css">
+    <link rel="stylesheet" href="/static/css/normalize.css" />
+    <link rel="stylesheet" href="/static/css/skeleton.css" />
 
-  <!-- Favicon
+    <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
-
-</head>
-<body>
-
-  <!-- Primary Page Layout
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+  </head>
+  <body>
+    <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <a href="https://github.com/makkoncept/colorpalette"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
-  <div class="container">
-    <div style="margin-top: 5%">
-      <h2 style="text-align: center;">Color Palette</h2>
-      <p style="text-align: center;">Extracts dominating colors from your image and present them as a palette </p>
-    </div>
-    <div class="row">
-      <div class="six columns"  style="padding-right: 10px">
-        <img src="{{url_for('static', filename='images/3.jpg')}}" width="450" height="310">
-
+    <a href="https://github.com/makkoncept/colorpalette"
+      ><img
+        style="position: absolute; top: 0; right: 0; border: 0"
+        src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"
+        alt="Fork me on GitHub"
+    /></a>
+    <div class="container">
+      <div style="margin-top: 5%">
+        <h2 style="text-align: center">Color Palette</h2>
+        <p style="text-align: center">Extracts dominating colors from your image and present them as a palette</p>
       </div>
-      <div class="six columns" style="padding-left: 10px">
-        <img src="{{url_for('static', filename='images/4.jpg')}}" width="450" height="310">
+      <div class="row">
+        <div class="six columns" style="padding-right: 10px">
+          <img src="{{url_for('static', filename='images/3.jpg')}}" width="450" height="310" />
+        </div>
+        <div class="six columns" style="padding-left: 10px">
+          <img src="{{url_for('static', filename='images/4.jpg')}}" width="450" height="310" />
+        </div>
       </div>
-    </div>
       <div style="padding-top: 40px">
-          <h3>Try It Now</h3>
-	  <p> Image must be less than 4Mb </p>
-          <form method="POST" enctype="multipart/form-data">
-            <div>
-              {{form.hidden_tag()}}
-              {{form.photo(class="u-full-width")}}
-              {% for error in form.photo.errors %}
-                   <span style="color:red;">{{ error}}</span>
-                {% endfor %}
+        <h3>Try It Now</h3>
+        <p>Image must be less than 4Mb</p>
+        <form method="POST" enctype="multipart/form-data">
+          <div>
+            {{form.hidden_tag()}} {{form.photo(class="u-full-width")}} {% for error in form.photo.errors %}
+            <span style="color: red">{{ error}}</span>
+            {% endfor %}
+          </div>
+          <div class="row">
+            <div class="six columns">
+              <label>Palette Height : Integer(1-10) {10 being the smallest}</label>
+              {{form.palette_height(class="u-full-width", value=4)}} {% for error in form.palette_height.errors %}
+              <span style="color: red">{{ error}}</span>
+              {% endfor %}
             </div>
-            <div class="row">
-              <div class="six columns">
-                <label>Palette Height : Integer(1-10) {10 being the smallest}</label>
-                {{form.palette_height(class="u-full-width", value=4)}}
-                 {% for error in form.palette_height.errors %}
-                   <span style="color:red;">{{ error}}</span>
-                {% endfor %}
-              </div>
-              <div class="six columns">
-                <label>Palette Outline Width in Pixels (1-40)</label>
-                {{form.palette_outline_width(class="u-full-width", value=10)}}
-                 {% for error in form.palette_outline_width.errors %}
-                   <span style="color:red;">{{ error}}</span>
-                {% endfor %}
-              </div>
-              <label>Palette Outline color</label>
-              <input type="color" name="palette_outline_color" value="white">
+            <div class="six columns">
+              <label>Palette Outline Width in Pixels (1-40)</label>
+              {{form.palette_outline_width(class="u-full-width", value=10)}} {% for error in
+              form.palette_outline_width.errors %}
+              <span style="color: red">{{ error}}</span>
+              {% endfor %}
             </div>
-            <input class="button-primary" type="submit" value="submit" >
-            </form>
+            <label>Palette Outline color</label>
+            <input type="color" name="palette_outline_color" value="white" />
+          </div>
+          <input class="button-primary" type="submit" value="submit" />
+        </form>
       </div>
-
-  </div>
-
-</body>
+    </div>
+  </body>
 </html>

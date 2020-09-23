@@ -1,62 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
+    <meta charset="utf-8" />
+    <title>Color-Palette</title>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
-  <meta charset="utf-8">
-  <title>Color-Palette</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- FONT
+    <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css" />
 
-  <!-- CSS
+    <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="/static/css/normalize.css">
-  <link rel="stylesheet" href="/static/css/skeleton.css">
+    <link rel="stylesheet" href="/static/css/normalize.css" />
+    <link rel="stylesheet" href="/static/css/skeleton.css" />
 
-  <!-- Favicon
+    <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+  </head>
+  <body>
+    <a href="https://github.com/makkoncept/colorpalette"
+      ><img
+        style="position: absolute; top: 0; right: 0; border: 0"
+        src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"
+        alt="Fork me on GitHub"
+    /></a>
 
-</head>
-<body>
-
-    <a href="https://github.com/makkoncept/colorpalette"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
-
-  <!-- Primary Page Layout
+    <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <div style="margin-top: 5%">
-      <h3 style="text-align: center;">Your Image</h3>
-      <p style="text-align: center;">Right click on it, and select "save image as" to download it. The downloaded image will be of Original Size</p>
-        <p style="text-align: center;">Try <a href="{{url_for('index')}}">Again</a>?</p>
-    </div>
+    <div class="container">
+      <div style="margin-top: 5%">
+        <h3 style="text-align: center">Your Image</h3>
+        <p style="text-align: center">
+          Right click on it, and select "save image as" to download it. The downloaded image will be of Original Size
+        </p>
+        <p style="text-align: center">Try <a href="{{url_for('index')}}">Again</a>?</p>
+      </div>
       <div>
-        <img src="{{src}}" height="{{height}}" width="{{width}}" style="margin-left: auto; margin-right: auto; display: block">
-    </div>
-      <h3 style="text-align: center; padding-top: 40px"> Palette with hex codes</h3>
+        <img
+          src="{{src}}"
+          height="{{height}}"
+          width="{{width}}"
+          style="margin-left: auto; margin-right: auto; display: block"
+        />
+      </div>
+      <h3 style="text-align: center; padding-top: 40px">Palette with hex codes</h3>
 
-        <div style="padding-top: 70px">
-            <table>
-
-              <tr>
-                {% for hex in hex_codes %}
-                <th style=" padding: 5px 20px 20px 20px; border: none;">
-                  {{ hex }}
-                </th>
-                {% endfor %}
-              </tr>
-            <tr>
-                <img src="{{src2}}" style="margin-left: auto; margin-right: auto; display: block">
-            </tr>
+      <div style="padding-top: 70px">
+        <table>
+          <tr>
+            {% for hex in hex_codes %}
+            <th style="padding: 5px 20px 20px 20px; border: none">{{ hex }}</th>
+            {% endfor %}
+          </tr>
+          <tr>
+            <img src="{{src2}}" style="margin-left: auto; margin-right: auto; display: block" />
+          </tr>
         </table>
-
-        </div>
-
-  </div>
-</body>
+      </div>
+    </div>
+  </body>
 </html>
