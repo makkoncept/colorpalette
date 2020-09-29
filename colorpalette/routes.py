@@ -42,39 +42,23 @@ def index():
             url_for(
                 "picture",
                 name=new_filename,
-                height=image_with_palette.height,
-                width=image_with_palette.width,
             )
         )
 
     return render_template("index.html", form=form, src="default")
 
 
-@app.route("/picture/<name>/<height>/<width>")
-def picture(name, height, width):
+@app.route("/picture/<name>")
+def picture(name):
     processed_img_relative_path = url_for("static", filename="images/" + name)
     pallete_relative_path = url_for("static", filename="images/" + "pal" + name)
-
-    height, width = img_tag_size(int(height), int(width))
 
     return render_template(
         "picture.html",
         src=processed_img_relative_path,
         src2=pallete_relative_path,
-        height=height,
-        width=width,
         hex_codes=session.get("hex_codes"),
     )
-
-
-def img_tag_size(height, width):
-    if height < 850 and width < 850:
-        return height, width
-    else:
-        while height > 850 and width > 850:
-            height = int(height / 2)
-            width = int(width / 2)
-        return height, width
 
 
 @app.errorhandler(413)
