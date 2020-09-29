@@ -16,6 +16,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="stylesheet" href="/static/css/normalize.css" />
     <link rel="stylesheet" href="/static/css/skeleton.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
 
     <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -39,13 +40,8 @@
         </p>
         <p style="text-align: center">Try <a href="{{url_for('index')}}">Again</a>?</p>
       </div>
-      <div>
-        <img
-          src="{{src}}"
-          height="{{height}}"
-          width="{{width}}"
-          style="margin-left: auto; margin-right: auto; display: block"
-        />
+      <div class="image-wrapper">
+        <img src="{{src}}" />
       </div>
       <h3 style="text-align: center; padding-top: 40px">Palette with hex codes</h3>
 
