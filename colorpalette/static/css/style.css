@@ -1,3 +1,27 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(245, 245, 245);
+  color: #0c0c07;
+  font-weight: 500;
+  font-family: "Raleway", sans-serif;
+}
+
+h1 {
+  font-size: 3.3rem;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
 .image-wrapper {
   width: 70%;
   margin: auto;
