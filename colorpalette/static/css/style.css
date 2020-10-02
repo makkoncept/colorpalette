@@ -34,6 +34,103 @@ h2 {
   justify-content: space-around;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.image-upload-wrapper {
+  margin: 1.5rem 0 3rem 0;
+  height: 11rem;
+  position: relative;
+  width: 100%;
+}
+
+.image-upload {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 4px dashed #9dceff;
+  border-radius: 0.5rem;
+  transition: background-color 0.25s ease-out;
+}
+
+.image-upload:hover {
+  background-color: #dbedff;
+}
+
+.image-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+.image-upload-wrapper .undertext {
+  font-size: 0.9rem;
+  color: #991c19;
+  float: right;
+}
+
+.number-input {
+  width: 100%;
+  display: flex;
+
+  align-items: center;
+  padding-bottom: 1rem;
+}
+
+.number-input label {
+  display: inline-block;
+
+  width: 50%;
+  padding-right: 2rem;
+  font-size: 1.3rem;
+  text-align: right;
+}
+
+.number-input input[type="number"] {
+  width: 30%;
+  font-size: 2rem;
+  font-weight: 400;
+  padding-left: 0.6rem;
+  border-radius: 2px;
+  border: 2px solid rgb(192, 192, 192);
+}
+
+.submit-button {
+  color: #fff;
+  background-color: #33c3f0;
+  border-color: #33c3f0;
+
+  display: inline-block;
+  height: 2.5rem;
+  padding: 0 30px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+}
+
+/* pictures.html */
 .image-wrapper {
   width: 70%;
   margin: auto;
