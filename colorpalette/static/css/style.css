@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color: #ea538c;
+  --primary-color-light: #ffcde0;
+}
+
 body {
   background-color: rgb(245, 245, 245);
   color: #0c0c07;
@@ -58,13 +63,13 @@ form {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border: 4px dashed #9dceff;
+  border: 4px dashed var(--primary-color);
   border-radius: 0.5rem;
   transition: background-color 0.25s ease-out;
 }
 
 .image-upload:hover {
-  background-color: #dbedff;
+  background-color: var(--primary-color-light);
 }
 
 .image-input {
@@ -112,8 +117,8 @@ form {
 
 .submit-button {
   color: #fff;
-  background-color: #33c3f0;
-  border-color: #33c3f0;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
 
   display: inline-block;
   height: 2.5rem;
@@ -154,7 +159,7 @@ form {
   opacity: 0;
 
   color: #fff;
-  background-color: #00cfc1;
+  background-color: var(--primary-color);
 
   font-size: 20px;
   font-weight: 500;
