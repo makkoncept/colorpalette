@@ -33,7 +33,7 @@ def process_uploaded_image(
     width, height = original_image.size
 
     # height for the pallete that will be pasted under the image
-    img_palette_height = int((height / 2) / pallete_division_factor)
+    img_palette_height = int(height / pallete_division_factor)
     img_palette_width = width / 10
 
     processed_image = Image.new(

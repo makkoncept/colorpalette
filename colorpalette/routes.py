@@ -20,7 +20,7 @@ def index():
 
         image_with_palette, pallete, hex_codes = process_uploaded_image(
             image,
-            pallete_division_factor=form.palette_height.data,
+            pallete_division_factor=11 - form.palette_height.data,
             outline_width=form.palette_outline_width.data,
             outline_color=hex_to_rgb(request.form.get("palette_outline_color")),
         )
