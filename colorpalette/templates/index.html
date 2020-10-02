@@ -20,22 +20,15 @@
         alt="Fork me on GitHub"
     /></a>
     <div class="container">
-      <div style="margin-top: 5%">
-        <h2 style="text-align: center">Color Palette</h2>
-        <p style="text-align: center">Extracts dominating colors from your image and present them as a palette</p>
+      <div class="introduction text-align-center">
+        <h1>Color Palette</h1>
+        <p>Extracts dominating colors from your image</p>
       </div>
-      <div class="row">
-        <div class="six columns" style="padding-right: 10px">
-          <img src="{{url_for('static', filename='images/3.jpg')}}" width="450" height="310" />
-        </div>
-        <div class="six columns" style="padding-left: 10px">
-          <img src="{{url_for('static', filename='images/4.jpg')}}" width="450" height="310" />
-        </div>
+      <div class="image-showcase">
+        <img src="{{url_for('static', filename='images/3.jpg')}}" width="450" height="310" />
+        <img src="{{url_for('static', filename='images/4.jpg')}}" width="450" height="310" />
       </div>
-      <div style="padding-top: 40px">
-        <h3>Try It Now</h3>
-        <p>Image must be less than 2Mb</p>
-        <form method="POST" enctype="multipart/form-data">
+      <h2 class="text-align-center">Try It Now</h2>
           <div>
             {{form.hidden_tag()}}
             <!-- prettier-ignore -->
