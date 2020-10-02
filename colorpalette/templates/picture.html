@@ -1,39 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Color Palette</title>
-    <meta name="description" content="" />
-    <meta name="author" content="" />
+{% extends "base.html" %} {% block content %}
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<div class="text-align-center margin-bottom-large">
+  <h2>Try <a href="{{url_for('index')}}">Again</a>?</h2>
+</div>
+<div class="image-wrapper">
+  <img src="{{src}}" />
+  <div class="overlay"></div>
+  <a href="{{src}}" class="download-image-button" download="image-with-palette">Download Image</a>
+</div>
 
-    <link href="//fonts.googleapis.com/css?family=Raleway:400,500,600" rel="stylesheet" type="text/css" />
+<div>
+  <h2 class="margin-top-large margin-bottom-normal text-align-center">Palette with hex codes</h2>
+  <div class="image-wrapper">
+    <img src="{{src2}}" />
+    <div class="overlay"></div>
+    <a href="{{src2}}" class="download-image-button" download="palette">Download Image</a>
+  </div>
+</div>
 
-    <link rel="stylesheet" href="/static/css/style.css" />
-  </head>
-  <body>
-    <a href="https://github.com/makkoncept/colorpalette"
-      ><img
-        style="position: absolute; top: 0; right: 0; border: 0"
-        src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"
-        alt="Fork me on GitHub"
-    /></a>
-
-    <div class="container">
-      <div class="text-align-center margin-bottom-large">
-        <h2>Try <a href="{{url_for('index')}}">Again</a>?</h2>
-      </div>
-      <div class="image-wrapper">
-        <img src="{{src}}" />
-        <div class="overlay"></div>
-        <a href="{{src}}" class="download-image-button" download="image-with-palette">Download Image</a>
-      </div>
-
-      <div>
-        <h2 class="margin-top-large margin-bottom-normal text-align-center">Palette with hex codes</h2>
-        <img src="{{src2}}" style="margin-left: auto; margin-right: auto; display: block" />
-      </div>
-    </div>
-  </body>
-</html>
+{% endblock %}
