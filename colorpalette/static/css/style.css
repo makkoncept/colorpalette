@@ -193,6 +193,11 @@ form {
   opacity: 1;
 }
 
+/* github fork ribbon : https://github.com/simonwhitaker/github-fork-ribbon-css */
+.github-fork-ribbon::before {
+  background-color: #333;
+}
+
 /* utils */
 .text-align-center {
   text-align: center;
