@@ -31,7 +31,8 @@ h2 {
   display: flex;
   padding: 2rem 0 4rem 0;
 
-  justify-content: space-around;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 form {
