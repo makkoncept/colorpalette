@@ -1,5 +1,6 @@
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 from webcolors import rgb_to_hex
+import os
 
 
 def get_dominant_colors(infile):
@@ -41,8 +42,12 @@ def process_uploaded_image(
     )  # blank canvas(original image + palette)
 
     pallete_under_image = Image.new("RGB", (width, img_palette_height))
+
+    # blank canvas for pallete. <mode, size, color>
     independent_pallete = Image.new(
-        "RGB", (numcolors * independent_pallete_width, independent_pallete_width)
+        "RGB",
+        (numcolors * independent_pallete_width, independent_pallete_width + 20),
+        color="rgb(255, 255, 255)",
     )
 
     draw = ImageDraw.Draw(pallete_under_image)
@@ -50,7 +55,13 @@ def process_uploaded_image(
 
     posx = 0
     posx2 = 0
-    hex_codes = []
+
+    fonts_path = os.path.join(
+        os.path.dirname(os.path.dirname(__file__)),
+        "colorpalette/static/font/Roboto-Bold.ttf",
+    )
+    # create font object with the font file
+    font = ImageFont.truetype(fonts_path, size=16)
 
     colors = get_dominant_colors(infile)
     # making the palettes
@@ -61,13 +72,24 @@ def process_uploaded_image(
             width=outline_width,
             outline=outline_color,
         )
+
+        # drawing one pallete at a time on independent pallete canvas
         draw2.rectangle(
             [posx2, 0, posx2 + independent_pallete_width, independent_pallete_width],
             fill=color,
         )
+
+        # write the hex code under the pallete
+        draw2.text(
+            (posx2 + 20, independent_pallete_width),
+            rgb_to_hex(color[:3]),
+            fill="rgb(0, 0, 0)",
+            font=font,
+        )
+
+        # move the pointer to the beginning of next pallete color
         posx = posx + img_palette_width
         posx2 = posx2 + independent_pallete_width
-        hex_codes.append(rgb_to_hex(color[:3]))
 
     del draw
     del draw2
@@ -77,4 +99,4 @@ def process_uploaded_image(
     processed_image.paste(original_image)
     processed_image.paste(pallete_under_image, box)
 
-    return processed_image, independent_pallete, hex_codes
+    return processed_image, independent_pallete

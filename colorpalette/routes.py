@@ -18,7 +18,7 @@ def index():
         _, ext = os.path.splitext(filename)
         new_filename = uuid.uuid4().hex + ext  # creating a random name
 
-        image_with_palette, pallete, hex_codes = process_uploaded_image(
+        image_with_palette, pallete = process_uploaded_image(
             image,
             pallete_division_factor=11 - form.palette_height.data,
             outline_width=form.palette_outline_width.data,
@@ -31,8 +31,6 @@ def index():
         pallete_path = os.path.join(
             app.root_path, "static/images", "pal" + new_filename
         )
-
-        session["hex_codes"] = hex_codes
 
         # saving image and pallete
         image_with_palette.save(image_with_pallete_path)
@@ -57,7 +55,6 @@ def picture(name):
         "picture.html",
         src=processed_img_relative_path,
         src2=pallete_relative_path,
-        hex_codes=session.get("hex_codes"),
     )
 
 
