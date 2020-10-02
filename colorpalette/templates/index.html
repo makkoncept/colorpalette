@@ -25,9 +25,19 @@
         <p>Extracts dominating colors from your image</p>
       </div>
       <div class="image-showcase">
-        <img src="{{url_for('static', filename='images/3.jpg')}}" width="450" height="310" />
+        <img
+          src="{{url_for('static', filename='images/image-before-processing.jpg')}}"
+          width="450"
+          height="310"
+          alt="image before processing"
+        />
         <img src="{{url_for('static', filename='images/right-arrow.png')}}" height="115" />
-        <img src="{{url_for('static', filename='images/4.jpg')}}" width="450" height="310" />
+        <img
+          src="{{url_for('static', filename='images/image-after-processing.jpg')}}"
+          width="450"
+          height="310"
+          alt="image after processing"
+        />
       </div>
       <h2 class="text-align-center">Try It Now</h2>
       <form method="POST" enctype="multipart/form-data">
