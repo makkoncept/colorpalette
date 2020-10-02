@@ -197,3 +197,15 @@ form {
 .text-align-center {
   text-align: center;
 }
+
+.margin-bottom-large {
+  margin-bottom: 4rem;
+}
+
+.margin-bottom-normal {
+  margin-bottom: 2rem;
+}
+
+.margin-top-large {
+  margin-top: 4rem;
+}
