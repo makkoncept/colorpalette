@@ -12,9 +12,16 @@
   </p>
 </p>
 
+# Demo
+<p align="center">
+  <img src="https://github.com/makkoncept/colorpalette/blob/master/.readme_assets/demo.gif?raw=true">
+</p>
+
 # Live
 
-View it live at: https://colorpalettedemo.herokuapp.com/
+View it live at: https://colorpalette.xyz
+
+An old version of the application lives on: https://colorpalettedemo.herokuapp.com/
 
 ## What it do
 
