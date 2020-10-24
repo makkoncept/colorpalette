@@ -13,6 +13,7 @@
 </p>
 
 # Demo
+
 <p align="center">
   <img src="https://github.com/makkoncept/colorpalette/blob/master/.readme_assets/demo.gif?raw=true">
 </p>
@@ -25,65 +26,81 @@ An old version of the application lives on: https://colorpalettedemo.herokuapp.c
 
 ## What it do
 
-Extracts 10 dominating colors from the image and add the palette to the bottom of the image (inspired by [colorpalette.cinema](https://www.instagram.com/colorpalette.cinema/?hl=en)).
-You can adjust the palette height, outline color and width to match your image dimension.
+Extracts 10 dominating colors from the image and adds the palette to the bottom of the image (inspired by [colorpalette.cinema](https://www.instagram.com/colorpalette.cinema/?hl=en)). You can adjust the palette height, outline color, and width to match your image dimension. Another independent image of the palette with the hex codes of colors is also generated.
 
-<img height="480" width="682.66" src="https://i.imgur.com/WuwhwOr.png">
+The app does not depend on any APIs for extracting colors. `color.py` contains the code for it with [Pillow](https://pillow.readthedocs.io/en/stable/) as the only dependency.
 
-## How it works
+## Directory Structure
 
-The `color.py` script does all the work. It uses Pillow. It takes the image and reduce the number of colors in it to 10, but the way it does this is interesting as only dominating colors are choosen as they can best resemble the original image.
+<pre>
 
-_image with 10 colors_
+|-- Procfile
+|-- README.md
+|-- app.json
+|-- colorpalette
+|   |-- __init__.py
+|   |-- color.py
+|   |-- forms.py
+|   |-- routes.py
+|   |-- static
+|   |   |-- css
+|   |   |-- font
+|   |   |-- images
+|   |   |   |-- favicon
+|   |   `-- js
+|   `-- templates
+|       |-- 413.html
+|       |-- base.html
+|       |-- index.html
+|       `-- picture.html
+|-- config.py
+|-- requirements.txt
+|-- run.py    
+`-- LICENSE
 
-<img width="50%" style="padding: 10px;" alt="Screenshot" src="https://user-images.githubusercontent.com/34679965/48556179-39e3ad80-e909-11e8-8671-dafe65d29fcc.png">
+</pre>
 
-_original image_
+## Run locally
 
-<img width="50%" src="https://user-images.githubusercontent.com/34679965/48556182-3f40f800-e909-11e8-8d70-22bf311513e2.png">
-
-To know more about the method you can read [this](http://www.aishack.in/tutorials/dominant-color/) post
-
-## Install & run locally
-
-Install:
+1. Clone the repostory:
 
 ```
 git clone https://github.com/makkoncept/colorpalette.git
-cd colorpalette
 ```
 
-Create a virtualenv:
+2. Navigate to the project root and create a virtual environment:
 
 ```
 python3 -m venv venv
 ```
 
-Activate it on Linux:
+3. Activate the virtual environment:
+
+Linux:
 
 ```
-. venv/bin/activate
+source venv/bin/activate
 ```
 
-Or on Windows cmd:
+Windows cmd:
 
 ```
 venv\Scripts\activate.bat
 ```
 
-Install requirements:
+4. Install requirements:
 
 ```
 pip install -r requirements.txt
 ```
 
-Run:
+5. Run the development server:
 
 ```
 python run.py
 ```
 
-View on [localhost:5000](http://127.0.0.1:5000)
+6. View on [localhost:5000](http://127.0.0.1:5000)
 
 ## Attribution
 
