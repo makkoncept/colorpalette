@@ -30,6 +30,36 @@ Extracts 10 dominating colors from the image and adds the palette to the bottom 
 
 The app does not depend on any APIs for extracting colors. `color.py` contains the code for it with [Pillow](https://pillow.readthedocs.io/en/stable/) as the only dependency.
 
+## Some samples
+
+1. <span>Photo by <a href="https://unsplash.com/@lukaodak?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Luka Odak</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+
+<p align="center">
+  <img width=80% src="https://i.imgur.com/zw0SenV.jpg"><br><br>
+  <img width=80% src="https://i.imgur.com/KNg06TY.jpg">
+</p>
+
+2. <span>Photo by <a href="https://unsplash.com/@goodspleen?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Alexandre Chambon</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+
+<p align="center">
+  <img width=80% src="https://i.imgur.com/ngBiV0t.jpg"><br><br>
+  <img width=80% src="https://i.imgur.com/xmn52P0.jpg">
+</p>
+
+3. <span>Photo by <a href="https://unsplash.com/@federyka?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Federica Diliberto</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+
+<p align="center">
+  <img height=1000px src="https://i.imgur.com/vZTtGEb.jpg"><br><br>
+  <img width=80% src="https://i.imgur.com/kvt0gNS.jpg">
+</p>
+
+4. <span>Photo by <a href="https://unsplash.com/@randomlies?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Ashim D’Silva</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+
+<p align="center">
+  <img width=80% src="https://i.imgur.com/QCnXUAf.jpg"><br><br>
+  <img width=80% src="https://i.imgur.com/jjcv5OV.jpg">
+</p>
+
 ## Directory Structure
 
 <pre>
