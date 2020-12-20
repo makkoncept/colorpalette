@@ -1,0 +1,7 @@
+{
+  "name": "ColorPalette",
+  "description": "Extracts dominating colors from an image and present them as a palette.",
+  "repository": "https://github.com/makkoncept/colorpalette",
+  "logo": "https://raw.githubusercontent.com/makkoncept/colorpalette/master/.readme_assets/color-palette.png",
+  "keywords": ["Flask", "Python", "Colors"]
+}
