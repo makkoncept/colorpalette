@@ -20,9 +20,12 @@
 
 # Live
 
-View it live at: https://colorpalette.xyz
+View it live at : https://colorpalettedemo.herokuapp.com/
 
-An old version of the application lives on: https://colorpalettedemo.herokuapp.com/
+You can deploy your own instance on heroku by clicking the following button
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 
 ## What it do
 
