@@ -5,7 +5,7 @@ gunicorn==19.9.0
 itsdangerous==1.1.0
 Jinja2==2.10.1
 MarkupSafe==1.1.1
-Pillow==7.2.0
+Pillow==8.3.2
 webcolors==1.8.1
 Werkzeug==0.15.5
 WTForms==2.2.1
